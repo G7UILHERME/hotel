@@ -7,7 +7,6 @@ $classificacao = $_POST['classificacao'];
 
 echo "<h1>Hotel cadastrado!</h1>";
 
-
 echo "Nome do Hotel: " . $nome_hotel . "<br>";
 echo "Cidade: " . $cidade . "<br>";
 echo "Estrelas: " . $classificacao . "<br>";
