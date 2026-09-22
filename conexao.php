@@ -6,11 +6,5 @@
 
    $conexao = mysqli_connect($host,$usuario,$senha, $banco);
 
-   if($conexao){
-    echo "Conectou ao banco de dados";
-   } else {
-    echo "Nao conectou ao banco de dados";
-   }
-
 
    ?>
