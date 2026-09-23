@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Quarto de hotel </title>
+    <title>Cadastro de Quarto de Hotel</title>
 </head>
 <body>
 
@@ -17,10 +17,10 @@
         <br><br>
 
         <label for="numero_quarto">Número do quarto:</label>
-        <input 
-            type="text" 
-            id="numero_quarto" 
-            name="numero_quarto" 
+        <input
+            type="text"
+            id="numero_quarto"
+            name="numero_quarto"
             placeholder="Ex.: 10, 202-A"
             required
         >
@@ -28,10 +28,10 @@
         <br><br>
 
         <label for="tipo_quarto">Tipo de quarto:</label>
-        <input 
-            type="text" 
-            id="tipo_quarto" 
-            name="tipo_quarto" 
+        <input
+            type="text"
+            id="tipo_quarto"
+            name="tipo_quarto"
             placeholder="Ex.: solteiro, casal, suíte luxo"
             required
         >
@@ -39,11 +39,11 @@
         <br><br>
 
         <label for="preco_diaria">Preço diária (R$):</label>
-        <input 
-            type="number" 
-            id="preco_diaria" 
-            name="preco_diaria" 
-            step="0.01" 
+        <input
+            type="number"
+            id="preco_diaria"
+            name="preco_diaria"
+            step="0.01"
             min="0"
             required
         >
@@ -55,6 +55,10 @@
     </form>
 
     <br>
+
+    <a href="listar_quartos.php">Listar quartos</a>
+
+    <br><br>
 
     <a href="logout_hotel.php">Sair / Desligar do sistema</a>
 
