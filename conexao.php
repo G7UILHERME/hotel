@@ -1,12 +1,10 @@
-<?php 
-   $host = "localhost";
-   $usuario = "root";
-   $senha = "";
-   $banco ="hotel_db";
+<?php
 
-   $conexao = mysqli_connect($host,$usuario,$senha, $banco);
+$host = "localhost";
+$usuario = "root";
+$senha = "";
+$banco = "hotel_db";
 
-   
+$conexao = mysqli_connect($host, $usuario, $senha, $banco);
 
-
-   ?>
+?>

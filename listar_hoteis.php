@@ -27,7 +27,7 @@ if (!$resultado) {
 
         <div>
 
-            <h2><?php echo $hotel['nome_hotel']; ?></h2>
+            <h2><?php echo $hotel['nome']; ?></h2>
 
             <p>
                 Cidade:
@@ -36,10 +36,10 @@ if (!$resultado) {
 
             <p>
                 Classificação:
-                <?php echo $hotel['classificacao']; ?> estrelas
+                <?php echo $hotel['estrelas']; ?> estrelas
             </p>
 
-            <a href="ver_quartos.php?id_hotel=<?php echo $hotel['id']; ?>">
+            <td> <a href="ver_quartos.php?id_hotel="<?php$linha['id']?>>VER QUARTOS</a></td>
                 Ver Quartos Disponíveis
             </a>
 
@@ -47,8 +47,8 @@ if (!$resultado) {
 
         <hr>
 
-    <?php } ?>
+    <?php 
 
 </body>
-
-</html>
+ 
+    <html>
