@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Reservas Veiguinha</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .brand-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f59e0b 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-link-custom {
+            color: #e2e8f0 !important;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link-custom:hover {
+            color: #f59e0b !important;
+        }
+
+        .banner-carousel-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 12px;
+        }
+
+        .quarto-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .rating-stars {
+            color: #fbbf24;
+            font-size: 0.85rem;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #3b82f6 100%);
+            color: white;
+            border: none;
+            font-weight: 700;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            opacity: 0.9;
+            color: white;
+        }
+
+        .btn-social-site {
+            background: linear-gradient(135deg, #f59e0b 0%, #3b82f6 100%);
+            color: white;
+            border: none;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 8px;
+            transition: opacity 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-social-site:hover {
+            opacity: 0.9;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .amenity-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .amenity-icon {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #f59e0b 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .location-card {
+            background: #ffffff;
+            border-radius: 12px;
+            border-left: 5px solid #f59e0b;
+        }
+
+        .card-quarto-item {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card-quarto-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="fa-solid fa-hotel text-warning"></i>
+                <span class="brand-title">Site de Reservas Veiguinha</span>
+            </a>
+            <div class="navbar-nav ms-auto flex-row gap-4">
+                <a class="nav-link nav-link-custom d-flex align-items-center gap-1" href="#">
+                    <i class="fa-solid fa-bed text-warning"></i> Nossas Acomodações
+                </a>
+                <a class="nav-link nav-link-custom d-flex align-items-center gap-1" href="#">
+                    <i class="fa-solid fa-user-circle text-info"></i> Área do Hóspede
+                </a>
+                <a class="nav-link nav-link-custom d-flex align-items-center gap-1" href="#">
+                    <i class="fa-solid fa-sliders text-warning"></i> Painel Administrativo
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+
+        <div id="carouselVeiguinha" class="carousel slide mb-4 shadow-sm rounded-3 overflow-hidden" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselVeiguinha" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselVeiguinha" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselVeiguinha" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3500">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80" class="banner-carousel-img d-block w-100" alt="Fachada Hotel">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                        <h5>Conforto e Sofisticação</h5>
+                        <p class="mb-0">A melhor experiência para sua estadia e momentos inesquecíveis.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3500">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" class="banner-carousel-img d-block w-100" alt="Suíte Executiva">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                        <h5>Suítes de Alto Padrão</h5>
+                        <p class="mb-0">Quartos equipados para garantir o seu descanso máximo.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3500">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80" class="banner-carousel-img d-block w-100" alt="Piscina e Lazer">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                        <h5>Área de Lazer Completa</h5>
+                        <p class="mb-0">Piscina, atendimento premium e infraestrutura moderna.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselVeiguinha" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselVeiguinha" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+
+        <div class="card shadow-sm border-0 p-4 mb-5">
+            <h4 class="fw-bold mb-3"><i class="fa-solid fa-magnifying-glass text-warning me-2"></i>Buscar Disponibilidade</h4>
+            <form class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold text-muted small">CHECK-IN</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold text-muted small">CHECK-OUT</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold text-muted small">HÓSPEDES</label>
+                    <select class="form-select">
+                        <option selected>1 Hóspede</option>
+                        <option>2 Hóspedes</option>
+                        <option>3 Hóspedes</option>
+                        <option>4+ Hóspedes</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-gradient w-100 py-2">
+                        <i class="fa-solid fa-calendar-check me-2"></i>Verificar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="mb-5">
+            <h3 class="mb-4 fw-bold text-center">Por que escolher o Hotel Veiguinha?</h3>
+            <div class="row g-3 text-center">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="amenity-card shadow-sm border-0 h-100">
+                        <i class="fa-solid fa-wifi amenity-icon mb-2"></i>
+                        <h6 class="fw-bold mb-1">Wi-Fi 5G</h6>
+                        <small class="text-muted">Alta velocidade em toda área</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="amenity-card shadow-sm border-0 h-100">
+                        <i class="fa-solid fa-person-swimming amenity-icon mb-2"></i>
+                        <h6 class="fw-bold mb-1">Piscina Aquecida</h6>
+                        <small class="text-muted">Lazer em todas as estações</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="amenity-card shadow-sm border-0 h-100">
+                        <i class="fa-solid fa-mug-hot amenity-icon mb-2"></i>
+                        <h6 class="fw-bold mb-1">Café da Manhã</h6>
+                        <small class="text-muted">Buffet completo incluso</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="amenity-card shadow-sm border-0 h-100">
+                        <i class="fa-solid fa-square-parking amenity-icon mb-2"></i>
+                        <h6 class="fw-bold mb-1">Estacionamento</h6>
+                        <small class="text-muted">Gratuito e monitorado 24h</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="amenity-card shadow-sm border-0 h-100">
+                        <i class="fa-solid fa-snowflake amenity-icon mb-2"></i>
+                        <h6 class="fw-bold mb-1">Ar-Condicionado</h6>
+                        <small class="text-muted">Split em todas as suítes</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="amenity-card shadow-sm border-0 h-100">
+                        <i class="fa-solid fa-concierge-bell amenity-icon mb-2"></i>
+                        <h6 class="fw-bold mb-1">Recepção 24h</h6>
+                        <small class="text-muted">Atendimento de prontidão</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mb-3 fw-bold">Quartos Disponíveis <small class="text-muted fs-6 fw-normal">(Clique para ver detalhes e itens extras)</small></h3>
+        <div class="row g-3 mb-5">
+            
+            <div class="col-6 col-md-3">
+                <div class="card h-100 shadow-sm border-0 card-quarto-item" data-bs-toggle="modal" data-bs-target="#modalQuarto101">
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=500&q=80" 
+                         alt="Suíte Master" class="quarto-img">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title mb-1 fw-bold">Quarto 101</h5>
+                        <p class="card-text text-success fw-bold mb-1">R$ 450,00 / noite</p>
+                        <div class="rating-stars mb-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="text-muted ms-1" style="font-size: 0.75rem;">(5.0)</span>
+                        </div>
+                        <p class="text-muted small mb-2" style="font-size: 0.75rem;">"Excelente limpeza e vista incrível!"</p>
+                        <button class="btn btn-sm btn-outline-primary w-100 mt-1"><i class="fa-solid fa-plus me-1"></i> Ver Itens Extras</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card h-100 shadow-sm border-0 card-quarto-item" data-bs-toggle="modal" data-bs-target="#modalQuarto101">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=500&q=80" 
+                         alt="Casal Premium" class="quarto-img">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title mb-1 fw-bold">Quarto 202</h5>
+                        <p class="card-text text-success fw-bold mb-1">R$ 350,00 / noite</p>
+                        <div class="rating-stars mb-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="text-muted ms-1" style="font-size: 0.75rem;">(4.0)</span>
+                        </div>
+                        <p class="text-muted small mb-2" style="font-size: 0.75rem;">"Cama muito confortável e espaço bom."</p>
+                        <button class="btn btn-sm btn-outline-primary w-100 mt-1"><i class="fa-solid fa-plus me-1"></i> Ver Itens Extras</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card h-100 shadow-sm border-0 card-quarto-item" data-bs-toggle="modal" data-bs-target="#modalQuarto101">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=500&q=80" 
+                         alt="Solteiro Executivo" class="quarto-img">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title mb-1 fw-bold">Quarto 303</h5>
+                        <p class="card-text text-success fw-bold mb-1">R$ 280,00 / noite</p>
+                        <div class="rating-stars mb-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="text-muted ms-1" style="font-size: 0.75rem;">(4.0)</span>
+                        </div>
+                        <p class="text-muted small mb-2" style="font-size: 0.75rem;">"Ótimo custo-benefício para viagens."</p>
+                        <button class="btn btn-sm btn-outline-primary w-100 mt-1"><i class="fa-solid fa-plus me-1"></i> Ver Itens Extras</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card h-100 shadow-sm border-0 card-quarto-item" data-bs-toggle="modal" data-bs-target="#modalQuarto101">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=500&q=80" 
+                         alt="Suíte Presidencial" class="quarto-img">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title mb-1 fw-bold">Quarto 404</h5>
+                        <p class="card-text text-success fw-bold mb-1">R$ 600,00 / noite</p>
+                        <div class="rating-stars mb-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="text-muted ms-1" style="font-size: 0.75rem;">(5.0)</span>
+                        </div>
+                        <p class="text-muted small mb-2" style="font-size: 0.75rem;">"Atendimento impecável e suíte perfeita."</p>
+                        <button class="btn btn-sm btn-outline-primary w-100 mt-1"><i class="fa-solid fa-plus me-1"></i> Ver Itens Extras</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card shadow-sm border-0 p-4 mb-5">
+            <h3 class="fw-bold mb-3"><i class="fa-solid fa-clock-rotate-left text-primary me-2"></i>Histórico de Acomodações Alugadas</h3>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nº Quarto</th>
+                            <th>Tipo</th>
+                            <th>Hóspede</th>
+                            <th>Período</th>
+                            <th>Status</th>
+                            <th>Total Pago</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">Quarto 105</td>
+                            <td>Suíte Presidencial</td>
+                            <td>Carlos Eduardo</td>
+                            <td>10/10 a 14/10</td>
+                            <td><span class="badge bg-secondary">Finalizado</span></td>
+                            <td class="fw-bold text-success">R$ 1.800,00</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Quarto 201</td>
+                            <td>Quarto Casal Luxo</td>
+                            <td>Mariana Silva</td>
+                            <td>18/10 a 20/10</td>
+                            <td><span class="badge bg-secondary">Finalizado</span></td>
+                            <td class="fw-bold text-success">R$ 700,00</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Quarto 302</td>
+                            <td>Suíte Premium</td>
+                            <td>Lucas Oliveira</td>
+                            <td>Ontem a Hoje</td>
+                            <td><span class="badge bg-success">Ocupado</span></td>
+                            <td class="fw-bold text-success">R$ 520,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h3 class="text-center my-4 fw-bold">Escolha uma opção</h3>
+        
+        <div class="row g-3 mb-5">
+            <div class="col-md-6">
+                <div class="card shadow-sm text-center p-3 h-100 border-0">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h4 class="card-title brand-title mb-2">Área do Cliente</h4>
+                            <p class="card-text text-muted mb-4">Faça seu login para visualizar suas reservas e preferências.</p>
+                        </div>
+                        <a href="#" class="btn btn-gradient w-100 py-2">Acessar Conta</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-sm text-center p-3 h-100 border-0">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h4 class="card-title brand-title mb-2">Cadastro do Hotel</h4>
+                            <p class="card-text text-muted mb-4">Gerencie as acomodações, preços e dados da sua hospedagem.</p>
+                        </div>
+                        <a href="#" class="btn btn-gradient w-100 py-2">Acessar Painel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-card shadow-sm p-4 mb-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <h4 class="fw-bold mb-3"><i class="fa-solid fa-location-dot text-danger me-2"></i>Localização & Contato</h4>
+                    <p class="mb-2"><i class="fa-solid fa-building text-secondary me-2"></i><strong>Hotel Veiguinha</strong></p>
+                    <p class="mb-2"><i class="fa-solid fa-map-pin text-warning me-2"></i>São Gonçalo do Rio Abaixo - MG</p>
+                    <p class="mb-2"><i class="fa-solid fa-envelope-open text-primary me-2"></i>CEP: 35935-000</p>
+                    <p class="mb-0"><i class="fa-solid fa-phone text-success me-2"></i>(31) 3833-1234 / (31) 99876-5432</p>
+                </div>
+                <div class="col-md-6 border-start-md">
+                    <h5 class="fw-bold mb-3"><i class="fa-solid fa-clock text-primary me-2"></i>Horários de Check-in e Out</h5>
+                    <div class="d-flex justify-content-between bg-light p-2 rounded mb-2">
+                        <span class="fw-semibold"><i class="fa-solid fa-key text-warning me-2"></i>Check-in:</span>
+                        <span class="text-muted">A partir das 14:00</span>
+                    </div>
+                    <div class="d-flex justify-content-between bg-light p-2 rounded">
+                        <span class="fw-semibold"><i class="fa-solid fa-door-open text-danger me-2"></i>Check-out:</span>
+                        <span class="text-muted">Até as 12:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center py-4 border-top">
+            <p class="fw-bold mb-2">Siga o Hotel Veiguinha nas Redes Sociais</p>
+            <div class="d-flex justify-content-center gap-3 mb-3">
+                <a href="#" class="btn btn-social-site d-flex align-items-center gap-2">
+                    <i class="fa-brands fa-instagram fs-5"></i> Instagram
+                </a>
+                <a href="#" class="btn btn-social-site d-flex align-items-center gap-2">
+                    <i class="fa-brands fa-facebook fs-5"></i> Facebook
+                </a>
+            </div>
+            <small class="text-muted">&copy; Site de Reservas Veiguinha - Todos os direitos reservados.</small>
+        </footer>
+
+    </div>
+
+    <!-- Modal de Detalhes do Quarto e Itens Extras -->
+    <div class="modal fade" id="modalQuarto101" tabindex="-1" aria-labelledby="modalQuartoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold" id="modalQuartoLabel"><i class="fa-solid fa-bed text-warning me-2"></i>Detalhes do Quarto & Itens Extras</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow-sm mb-2" alt="Detalhe Quarto">
+                            <h4 class="fw-bold text-success mb-1">R$ 450,00 <small class="text-muted fs-6">/ noite</small></h4>
+                            <p class="text-muted small">Acomodação de alto padrão com vista panorâmica, acabamento em madeira nobre e isolamento acústico.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3 border-bottom pb-2"><i class="fa-solid fa-list-check text-primary me-2"></i>Itens Inclusos & Comodidades Extras</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><i class="fa-solid fa-check-circle text-success me-2"></i><strong>Frigobar Abastecido:</strong> Bebidas e snacks inclusos.</li>
+                                <li class="mb-2"><i class="fa-solid fa-check-circle text-success me-2"></i><strong>Smart TV 55":</strong> Acesso a Netflix e canais a cabo.</li>
+                                <li class="mb-2"><i class="fa-solid fa-check-circle text-success me-2"></i><strong>Cofre Digital:</strong> Segurança para notebooks e documentos.</li>
+                                <li class="mb-2"><i class="fa-solid fa-check-circle text-success me-2"></i><strong>Cafeteira Nespresso:</strong> Cápsulas cortesia.</li>
+                                <li class="mb-2"><i class="fa-solid fa-check-circle text-success me-2"></i><strong>Roupão & Pantufas:</strong> Kit praia/piscina exclusivo.</li>
+                                <li class="mb-2"><i class="fa-solid fa-check-circle text-success me-2"></i><strong>Cama King Size:</strong> Enxoval 400 fios.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-gradient px-4"><i class="fa-solid fa-calendar-plus me-2"></i>Reservar Este Quarto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
